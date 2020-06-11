@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title></title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='vendor/bootstrap/css/bootstrap.min.css')}}">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	</head>
+<body style="">
+
+
+	<!-- Navbar -->
+<nav class="navbar  navbar-dark bg-dark fixed-top p-2 pl-3">
+  <a class="navbar-brand" href="#"><h2>Welcome</h2> </a>
+  <div class="row">
+  	<div class="col-md-2"></div>
+  	<div class="col-md-4">
+  		<div class="dropdown dropleft">
+			  	<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			    <i class="fa fa-bars"></i>
+				</button>
+			  	<div class ="dropdown-menu">
+			    	<a class="dropdown-item" href="#gb">Group B</a>
+			    	<a class="dropdown-item" href="#gc">Group C</a>
+			    	<a class="dropdown-item" href="#gd">Group D</a>
+			  	</div>
+			</div>
+  	</div>
+      
+  </div>
+  
+</nav>
+
+
+<br><br><br>
+<div class="text-center">
+     {% for i in post1 %}
+	<h1 class="p-1">Hello {{i.Name}}<img src="{{ url_for('static',filename='hi.gif')}}" class="mb-3" style="height: 60px;width: 60px;"></h1>
+	{% endfor %}
+<h5 class="text-right">Haven't Sent invitation Yet?</h5>
+<form class="text-right" action="/page2" mathod="get"><button class="text-right" style="background-color: none;border-style: none;">Click Here</button></form>
+<hr>
+</div>
+<div class="row mb-5">
+	<div class="col-6">
+		<h1 class="text-center" style="border-bottom: 2px solid blue; background-color: lightgray;"> Invitation Accepted </h1>
+	</div>
+	<div class="col-6" id="gb">
+		<h1 class="text-center mb-2" style="border-bottom: 2px solid blue;background-color: lightgray"> Invitation Sent </h1>
+	</div>
+	
+</div>
+<div class="container-fluid">
+	<div class="row" style="border-bottom: 2px solid black;">
+		<div class="col-3 mb-4">
+			<h4 class="text-center" style="border-bottom: 1.5px solid blue;">Group B</h4>
+			<table class="table table-danger table-hover mt-4">
+				<thead class="text-center">
+      				<tr>
+				        <th>USN</th>
+				     
+      				</tr>
+    			</thead>
+    			<tbody>
+    				<tr>
+    					{% for i in post1 %}
+    					<td>{{i.GB}}</td>
+    					{% endfor %}
+    			
+    				</tr>
+    			</tbody>
+			</table>
+		</div>
+		<div class="col-3 mb-4"></div>
+		<div class="col-3 mb-4" style="border-left: 2px solid black;"></div>
+		<div class="col-3 mb-4">
+			<h4 class="text-center"style="border-bottom: 1.5px solid blue;">Group B</h4>
+			<table class="table table-primary table-hover mt-4">
+				<thead class="text-center">
+      				<tr>
+				        <th>USN</th>
+				        <th>Time</th>
+      				</tr>
+    			</thead>
+    			<tbody>
+    				{% for i in post %}
+    					{% if i.GA=='B' %}
+		    				<tr>
+		    					<td>{{i.rusn}}</td>
+		    					<td>{{i.transaction_date}}</td>
+		    				</tr>
+		    			{% endif %}
+    				{% endfor %}
+    			</tbody>
+			</table>
+		</div>
+	</div>
+	<div class="row mt-5" style="border-bottom: 2px solid black;" id="gd">
+		<div class="col-3 mb-4"></div>
+		<div class="col-3 mb-4">
+			<h4 class="text-center" style="border-bottom: 1.5px solid blue;">Group C</h4>
+			<table class="table table-warning mt-4 table-hover">
+				<thead class="text-center">
+      				<tr>
+				        <th>USN</th>
+				        
+      				</tr>
+    			</thead>
+    			<tbody>
+    				<tr>
+    					{% for i in post1 %}
+    					<td>{{i.GC}}</td>
+    					{% endfor %}
+    					
+    					
+    				</tr>
+    			</tbody>
+			</table>
+		</div>
+		
+		<div class="col-3 mb-4" style="border-left: 2px solid black;">
+			<h4 class="text-center" style="border-bottom: 1.5px solid blue;">Group C</h4>
+			<table class="table table-success table-hover mt-4">
+				<thead class="text-center">
+      				<tr>
+				        <th>USN</th>
+				        <th>Time</th>
+      				</tr>
+    			</thead>
+    			<tbody>
+    				{% for i in post %}
+    					{% if i.GA=='C' %}
+		    				<tr>
+		    					<td>{{i.rusn}}</td>
+		    					<td>{{i.transaction_date}}</td>
+		    				</tr>
+		    			{% endif %}
+    				{% endfor %}
+    			</tbody>
+			</table>
+		</div>
+	</div>
+	<div class="row mt-5" id="gc">
+		<div class="col-3 mb-4">
+			<h4 class="text-center" style="border-bottom: 1.5px solid blue;">Group D</h4>
+			<table class="table table-hover table-danger mt-4">
+				<thead class="text-center">
+      				<tr>
+				        <th>USN</th>
+      				</tr>
+    			</thead>
+    			<tbody>
+    				<tr>
+    					{% for i in post1 %}
+    					<td>{{i.GD}}</td>
+    					{% endfor %}
+    					
+    				</tr>
+    			</tbody>
+			</table>
+		</div>
+		<div class="col-3" style="border-right: 2px solid black;"></div>
+		<div class="col-3"></div>
+		<div class="col-3 mb-4">
+			<h4 class="text-center" style="border-bottom: 1.5px solid blue;">Group D</h4>
+			<table class="table table-info table-hover mt-4">
+				<thead class="text-center">
+      				<tr>
+				        <th>USN</th>
+				        <th>Time</th>
+      				</tr>
+    			</thead>
+    			<tbody>
+    				{% for i in post %}
+    					{% if i.GA=='D' %}
+		    				<tr>
+		    					<td>{{i.rusn}}</td>
+		    					<td>{{i.transaction_date}}</td>
+		    				</tr>
+		    			{% endif %}
+    				{% endfor %}
+    			</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>

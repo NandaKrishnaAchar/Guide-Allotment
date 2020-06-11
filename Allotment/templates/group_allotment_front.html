@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title></title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='vendor/bootstrap/css/bootstrap.min.css')}}">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
+	</head>
+	
+<style>
+
+body {
+  background-image: url("{{ url_for('static',filename='images/allot13.jpg')}}");
+  background-position: center; 
+  background-repeat: no-repeat; 
+  background-size: cover;
+  background-attachment: scroll;
+  zoom=0.75;
+  -moz-transform:scale(0.75);
+}
+
+.w3-lobster {
+  font-family: "Lobster", serif;
+}
+
+.w3-allerta {
+  font-family: "Allerta Stencil", Sans-serif;
+}
+
+.w3-myfont {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+</style>
+<body>
+
+
+	<!-- Navbar -->
+<nav class="navbar  navbar-dark bg-dark fixed-top p-2 pl-3">
+  <a class="navbar-brand" href="#"><h2>Welcome</h2> </a>
+  <div class="row">
+  	<div class="col-md-2"></div>
+  	<div class="col-md-4">
+  		<div class="dropdown dropleft">
+			  	<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			    <i class="fa fa-bars"></i>
+				</button>
+			  	<div class ="dropdown-menu">
+			    	<a class="dropdown-item" href="#gb">Group B</a>
+			    	<a class="dropdown-item" href="#gc">Group C</a>
+			    	<a class="dropdown-item" href="#gd">Group D</a>
+			  	</div>
+			</div>
+  	</div>
+      
+  </div>
+  
+</nav>
+
+
+<br><br><br>
+
+<div class="text-center">
+
+<div class="w3-container w3-lobster">
+<h1 class="p-1"><bold>Hello {{post1.Name}}</bold><img src="{{ url_for('static',filename='images/hi.gif')}}" class="mb-3" style="height: 60px;width: 60px;"></h1>
+</div>
+<div class="w3-container w3-myfont">
+<p class="w3-right" style="font-size: 23px;">Haven't Sent invitation Yet?</p>
+</div>
+<div class="w3-container">
+<form class="text-right" action="/page2" method="get"> <p><button class="w3-button w3-teal w3-border w3-hover-yellow">Click Here</button></p></form>
+</div>
+
+<hr>
+</div>
+<div class="row mb-5">
+	<div class="col-6">
+	<div class="w3-container w3-black w3-center w3-allerta">
+		<p class="w3-center" style="font-size: 40px;">Invitation Accepted </p>
+	</div>	
+	</div>
+	<div class="col-6" id="gb">
+	<div class="w3-container w3-black w3-center w3-allerta">
+		<p class="w3-center" style="font-size: 40px;"> Invitation Sent </p>
+	</div>	
+	</div>
+	
+</div>
+<div class="container-fluid">
+	<div class="row" style="border-bottom: 2px solid black;">
+		<div class="col-3 mb-4">
+		<div class="w3-container w3-center w3-animate-right">
+		<div class="w3-container w3-lobster">
+			<p class="w3-center" style="font-size: 30px;">Group B</p>
+		</div>	
+			<table class="table table-hover mt-4" style=" background-color:rgba(238, 107, 216, 0.7);">
+				<thead class="text-center">
+      				<tr>
+				        <th class="w3-center"><div class=" w3-lobster "><p style="font-size: 22px; ">USN</p></div></th>
+				        <th class="w3-center"><div class=" w3-lobster "><p style="font-size: 22px; ">Name</p></div></th>
+					
+      				</tr>
+    			</thead>
+    			<tbody>
+    				<tr>
+    					<td><div class=" w3-myfont "><p style="font-size: 19px;">{{res['B'][0]}}</p></div></td>
+    					<td><div class=" w3-myfont "><p style="font-size: 19px;">{{res['B'][1]}}</p></div></td>
+    				</tr>
+    			</tbody>
+			</table>
+		</div>
+		</div>
+		<div class="col-3 mb-4"></div>
+		<div class="col-3 mb-4" style="border-left: 2px solid black;"></div>
+		<div class="col-3 mb-4">
+		<div class="w3-container w3-center w3-animate-left">
+		<div class="w3-container w3-lobster">
+			<p class="w3-center" style="font-size: 30px;">Group B</p>
+		</div>
+			<table class="table table-hover mt-4" style="background-color:rgba(238, 107, 216, 0.7);">
+				<thead class="text-center">
+      				<tr>
+				       <th class="w3-center"><div class=" w3-lobster "><p style="font-size: 22px;">USN</p></div></th>
+					<th class="w3-center"><div class=" w3-lobster "><p style="font-size: 22px;">Name</p></div></th>
+				        <th class="w3-center"><div class=" w3-lobster "><p style="font-size: 22px; ">Time</p></div></th>
+					<th class="w3-center"><div class=" w3-lobster "><p style="font-size: 22px; "></p></div></th>
+					
+      				</tr>
+    			</thead>
+    			<tbody>
+				{% for key,value in arrb.items() %}
+    				<tr>
+    					<td><div class=" w3-myfont "><p style="font-size: 19px;">{{key}}</p></div></td>
+    					<td><div class=" w3-myfont "><p style="font-size: 19px;">{{value[2]}}</p></div></td>
+    					<td><div class=" w3-myfont "><p style="font-size: 19px;">{{value[0]}}</p></div></td>
+    					<td><div class=" w3-myfont "><p style="font-size: 19px;"><form action='/unsent' method='post'><input type="text" value={{value[1]}} name="delid" hidden><button>unsend</button></form></p></div></td>
+    				</tr>
+				{% endfor %}
+    			</tbody>
+			</table>
+		</div>
+		</div>
+	</div>
+	<div class="row mt-5" style="border-bottom: 2px solid black;" id="gd">
+		<div class="col-3 mb-4"></div>
+		<div class="col-3 mb-4">
+		<div class="w3-container w3-center w3-animate-left">
+		<div class="w3-container w3-lobster">
+			<p class="w3-center" style="font-size: 30px;">Group C</p>
+		</div>
+			<table class="table mt-4 table-hover" style="background-color:rgba(83, 145, 255, 0.7);">
+				<thead class="text-center">
+      				<tr>
+				         <th class="w3-center"><div class=" w3-lobster "><p style="font-size: 22px; ">USN</p></div></th>
+				        <th class="w3-center"><div class=" w3-lobster "><p style="font-size: 22px; ">Name</p></div></th>
+					
+      				</tr>
+    			</thead>
+    			<tbody>
+    				<tr>
+    					<td><div class=" w3-myfont "><p style="font-size: 19px;">{{res['C'][0]}}</p></div></td>
+    					<td><div class=" w3-myfont "><p style="font-size: 19px;">{{res['C'][1]}}</p></div></td>
+    				</tr>
+    			</tbody>
+			</table>
+		</div>	
+		</div>
+		
+		<div class="col-3 mb-4" style="border-left: 2px solid black;">
+		<div class="w3-container w3-center w3-animate-right">
+		<div class="w3-container w3-lobster">
+			<p class="w3-center" style="font-size: 30px;">Group C</p>
+		</div>
+			<table class="table table-hover mt-4" style="background-color:rgba(83, 145, 255, 0.7);">
+				<thead class="text-center">
+      				<tr>
+				        <th class="w3-center"><div class=" w3-lobster "><p style="font-size: 22px; ">USN</p></div></th>
+				        <th class="w3-center"><div class=" w3-lobster "><p style="font-size: 22px; ">Name</p></div></th>
+				        <th class="w3-center"><div class=" w3-lobster "><p style="font-size: 22px; ">Time</p></div></th>
+				        <th class="w3-center"><div class=" w3-lobster "><p style="font-size: 22px; "></p></div></th>
+      				</tr>
+    			</thead>
+    			<tbody>
+			{% for key,value in arrc.items() %}
+    				<tr>
+    					<td><div class=" w3-myfont "><p style="font-size: 19px;">{{key}}</p></div></td>
+    					<td><div class=" w3-myfont "><p style="font-size: 19px;">{{value[2]}}</p></div></td>
+    					<td><div class=" w3-myfont "><p style="font-size: 19px;">{{value[0]}}</p></div></td>
+    					<td><div class=" w3-myfont "><p style="font-size: 19px;"> <form action='/unsent' method='post'><input type="text" value={{value[1]}} name="delid" hidden><button>unsend</button></form></p></div></td>
+					
+    				</tr>
+			{% endfor %}
+    			</tbody>
+			</table>
+		</div>	
+		</div>
+	</div>
+	<div class="row mt-5" id="gc">
+		<div class="col-3 mb-4">
+		<div class="w3-container w3-center w3-animate-right">
+		<div class="w3-container w3-lobster">
+			<p class="w3-center" style="font-size: 30px;">Group D</p>
+		</div>
+			<table class="table table-hover mt-4" style="background-color:rgba(255, 99, 71, 0.7);">
+				<thead class="text-center">
+      				<tr>
+				       
+				        <th class="w3-center"><div class=" w3-lobster "><p style="font-size: 22px; ">USN</p></div></th>
+				        <th class="w3-center"><div class=" w3-lobster "><p style="font-size: 22px; ">Name</p></div></th>
+					
+      				</tr>
+    			</thead>
+    			<tbody>
+    				<tr>
+    					<td><div class=" w3-myfont "><p style="font-size: 19px;">{{res['D'][0]}}</p></div></td>
+    					<td><div class=" w3-myfont "><p style="font-size: 19px;">{{res['D'][1]}}</p></div></td>
+    				</tr>
+    			</tbody>
+			</table>
+		</div>	
+		</div>
+		<div class="col-3" style="border-right: 2px solid black;"></div>
+		<div class="col-3"></div>
+		<div class="col-3 mb-4">
+		<div class="w3-container w3-center w3-animate-left">
+		<div class="w3-container w3-lobster">
+			<p class="w3-center" style="font-size: 30px;">Group D</p>
+		</div>
+			<table class="table table-hover mt-4 mr-3" style=" background-color:rgba(255, 99, 71, 0.7);">
+				<thead class="text-center">
+      				<tr>
+					
+				        <th class="w3-center"><div class=" w3-lobster "><p style="font-size: 22px; ">USN</p></div></th>
+				        <th class="w3-center"><div class=" w3-lobster "><p style="font-size: 22px; ">Name</p></div></th>
+				        <th class="w3-center"><div class=" w3-lobster "><p style="font-size: 22px; ">Time</p></div></th>
+				        <th class="w3-center"><div class=" w3-lobster "><p style="font-size: 22px; "></p></div></th>
+					
+      				</tr>
+    			</thead>
+    			<tbody>
+				{% for key,value in arrd.items() %}
+    				<tr>
+    					<td><div class=" w3-myfont "><p style="font-size: 19px;">{{key}}</p></div></td>
+    					<td><div class=" w3-myfont "><p style="font-size: 19px;">{{value[2]}}</p></div></td>
+    					<td><div class=" w3-myfont "><p style="font-size: 19px;">{{value[0]}}</p></div></td>
+    					<td><div class=" w3-myfont "><p style="font-size: 19px;"><form action='/unsent' method='post'><input type="text" value={{value[1]}} name="delid" hidden><button>unsend</button></form></p></div></td>
+					
+    				</tr>
+				{% endfor %}
+    			</tbody>
+			</table>
+		</div>	
+		</div>
+	</div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+
+</body>
+</html>

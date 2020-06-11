@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+
+	<title>Main</title>
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='vendor/bootstrap/css/bootstrap.min.css')}}">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+  <style type="text/css">
+  	.dropdown-toggle::after 
+	{
+    display: none;
+    }
+  </style>
+  
+  <style>
+
+
+.hero-image {
+  background-image: url("static/aa2.jpeg");
+  background-color: #cccccc;
+  height: 700px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  border: 2px solid white;
+}
+
+.w3-lobster {
+  font-family: "Lobster", serif;
+}
+
+.w3-myfont {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+.w3-allerta {
+  font-family: "Allerta Stencil", Sans-serif;
+}
+
+</style>
+  
+  <title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-flat.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-win8.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
+</head>
+<body>
+	
+<!-- Code for navbar -->
+<div class="container-fluid">
+	<div class="row bg-dark p-3 navbar fixed-top fixed-top-2">
+		<div class="col-4">
+
+
+		  	<div class="dropdown">
+			  	<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			    Menu
+			    <i class="fa fa-align-justify"></i>
+				</button>
+			  	<div class ="dropdown-menu">
+			    	<a class="dropdown-item" href="#about">About</a>
+			    	<a class="dropdown-item" href="#guideline">Guideline</a>
+			    	<a class="dropdown-item" href="#support">Support</a>
+			  	</div>
+			</div>
+		</div>
+		<div class="col-6"></div>
+		<div class="col-1 pl-5">
+			<a href="/" class="btn btn-secondary dropdown-toggle" style="font-size: 20px; margin-right: 30px;"><hq>Login</a>
+		</div>
+		<div class="col-1">
+			<a href="#" class="btn btn-secondary dropdown-toggle" style="font-size: 20px; margin-right: 30px;"><hq>Results</a>
+			
+		</div>
+	</div>	
+</div>
+<!-- Navbar code ends here -->
+
+<!-- Code for Logo and Menu -->
+<div class="hero-image">
+
+<div class="row ml-1" style="margin-top: 90px;">
+		<div class="col-1">
+			<img src="https://jssstuniv.in/wp-content/uploads/2019/03/logo-for-web-site.jpg" style="width:300px;height:150px;">
+		</div>
+		<div class="col-2"> </div>
+		<p></p>
+		<div class="w3-container w3-lobster">
+			<p class="w3-center" style="font-size: 55px;">Department of Computer Science and Engineering</p>
+			<p class="w3-center" style="font-size: 55px;"></p>
+		</div>
+		
+</div>
+<!-- Code for logo and menu ends here -->
+
+<!-- Code for team section-->
+<div class=" container-fluid">
+	<div class="row mt-5">
+		<div class="col-5 mt-5">
+		<div class="w3-container w3-myfont">
+			 <p class="w3-center" style="font-size: 47px;"><bold>2020-2021 Project Team </bold></p>
+			  <p class="w3-center" style="font-size: 40px;">Create Your group for your project</p>
+			 </div>
+		</div>
+		<div class="col-7 text-center">
+			<img src="static/team.jpeg" style="width: 550px;height:300px;">
+		</div>
+		<div id="about"></div>
+	</div>
+</div>
+<h1> <p></p></h1>
+<div>
+
+
+</div>
+</div>
+<!-- About US code -->
+<div class="container-fluid">
+	<div class="w3-panel w3-win8-lime">
+		<div class="col-12">
+			<h1>About Us</h1>
+			<hr>
+			<h3 class="text-justify">This webpage has been built in coordination with the Department Of Computer Science and Engineering, JSSSTU, Mysuru, in concern with the final year project group formation of the students pursing the course Bachelor of Engineering in the department.</h3>
+		</div>
+	</div>
+</div>
+
+<div>
+<h1><p></p> </h1>
+</div>
+
+<!--Guideline Coode -->
+<div class="container-fluid">
+	<div class="w3-panel w3-flat-turquoise">
+		<div class="col-12">
+			<h1 id="guideline">Guideline</h1>
+			<hr>
+			<h3 class="text-justify">
+			The team leader can form a team of 4 members, where the process is followed as mentioned:
+			</h3>
+			<h3 class="text-justify">
+			1. There are 3 groups: Group B, Group C and Group D. The team leader can choose to invite any number of students from each group. The invitations will be sent to all of them through Email.
+			</h3>
+			<h3 class="text-justify">
+			2. The project team can have only one person from each group. So, the first student to accept the team leader's invitation in each group(i.e., one student each from Group B, Group C and Group D joins that team. )
+			</h3>
+			<h3 class="text-justify">
+			3. Once the invitation is accepted by the student, that person cannot be removed from the team.
+			</h3>
+			<h3 class="text-justify">
+			4. Later, after the group is formed that consists of a team leader and one person each from Group B, Group C and Group D, mentors will be allocated to each group.
+			</h3>
+			<h3 class="text-justify">
+			NOTE: The team leaders will be given a certain time period to form the team. If within that period if the team leader fails to form the team then after the end of the specified period, random allocation of students to the group will be done. The students from each group can only join the team if they accept the invitation within the specified period.
+			</h3>
+		</div>
+	</div>
+</div>
+
+<div>
+<h1><p></p> </h1>
+</div>
+
+<!-- Support Code -->
+<div class="container-fluid mb-5 mt-5" style="border:2px solid black;">
+	
+	<div class="col-12">
+		<h1 id="support"> Contact </h1>
+		
+	</div>
+	<div class="row">
+		<div class="col-5 ml-3 mt-3" >
+		<div class="w3-panel w3-win8-lime" style="text-align:center" >
+			<h3>Contact1</h3>
+			<hr>
+		
+			NANDA KRISHNA K S<br>
+			+91 9731152288<br>
+			nandakrishna.achar@gmail.com<br><br>
+		</div>
+		</div>
+		<div class="ml-4 mt-3 col-5" >
+	    <div class="w3-panel w3-win8-lime" style="text-align:center">
+			<h3>Contact2</h3>
+			<hr>
+			SHESHNATH<br>
+			+91 9916363783<br>
+			sheshnathhadbe@gmail.com<br><br>
+		</div>
+		</div>
+	
+</div>
+</div>
+
+</body>
+</html>

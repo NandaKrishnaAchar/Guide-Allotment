@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title></title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='vendor/bootstrap/css/bootstrap.min.css')}}">
+	<style>
+.button {
+  
+  border: none;
+  color: white;
+  padding: 7px 18px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button1 {
+	background-color:#ffc100;
+  
+  color: black; 
+}
+
+.button1:hover {
+  background-color: red;
+  color: white;
+}
+.row1{
+	margin-left: 5%;
+}
+.gen{
+	padding: 20px;
+}
+.gen1{
+	padding: 60px;
+}
+.bt{
+	color:white;
+	background-color:#4d88ff;
+	border-radius:8px;
+
+}
+.bt:hover{
+	color:white;
+	background-color:#3333ff;
+	border-radius:8px;
+}
+</style>
+
+</head>
+<body>
+
+
+	<!-- Navbar -->
+<nav class="navbar  navbar-dark bg-dark fixed-top p-2 pl-3">
+  <a class="navbar-brand" href="#"><h2>Welcome</h2> </a>
+  <div class="row">
+  	<div class="col-md-3"></div><form action="/page1"><button class="button button1 pr-3 mr-2" style="font-size: 20px;">Home</button></form>
+	<div class="col-md-3" style="margin-right:40px;"><form action="/logout"><button class="button button1 pr-3 mr-2" style="font-size: 20px;">Logout</button></form></div>
+  </div>
+  
+</nav>
+<br><br><br>
+<div>
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    {% for message in messages %}
+      {{ message }}
+    {% endfor %}
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+  {% endif %}
+{% endwith %}
+</div>
+	<!-- Option entry module -->
+<br><br>
+	
+		<div class="container-fluid p-3 text-center bg-secondary">
+			<h1 style=" font-size: 50px;">Group Allotment</h1>
+		</div>
+	<br><br>	
+		
+	<!-- Group B option Entry -->
+	<div class="container-fluid p-3 text-center bg-secondary">
+			<h1 style=" font-size: 50px;">Group B</h1>
+	</div>
+	<div class="container" style="height:300px;overflow-y: scroll;">
+		<br>
+    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names or USN..">
+  	<table class="table table-hover" id="myTable">
+    <thead class="text-center">
+      <tr>
+        <th>USN</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Section</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      
+      	{% for i in post %}
+			{% if i.GA=='B' and i.status==0 and i.usn not in post2 %}
+				<form method="post" action="/page2">
+				<tr class="zoom">
+				<td><input  type="text" name="B" value={{i.usn}} hidden="">{{i.usn}}</td>
+				<td>{{i.name}}</td>
+				<td>{{i.email}}</td>
+				<td>{{i.phn}}</td>
+				<td>{{i.sec}}</td>
+				<td><button class="bt p-2">Invite</button></td>
+				</tr>
+				
+				</form>
+			{% endif %}
+	{% endfor %}
+    </tbody>
+  </table>
+</div>		
+<br>	
+<!-- Option Entry for group C -->
+<div class="container-fluid p-3 text-center bg-secondary">
+			<h1 style=" font-size: 50px;">Group C</h1>
+	</div>
+	<div class="container" style="height:300px;overflow-y: scroll;">
+		<br>
+    <input type="text" id="myInput1" onkeyup="myFunction1()" placeholder="Search for names or USN..">
+  	<table class="table table-hover" id="myTable1">
+    <thead class="text-center">
+      <tr>
+        <th>USN</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Section</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      
+      	{% for i in post %}
+			{% if i.GA=='C' and i.status==0 and i.usn not in post2 %}
+				<form method="post" action="/page2">
+				<tr>
+				<td><input  type="text" name="C" value={{i.usn}} hidden="">{{i.usn}}</td>
+				<td>{{i.name}}</td>
+				<td>{{i.email}}</td>
+				<td>{{i.phn}}</td>
+				<td>{{i.sec}}</td>
+				<td><button class="bt p-2">Invite</button></td>
+				</tr>
+				
+				</form>
+			{% endif %}
+	{% endfor %}
+    </tbody>
+  </table>
+</div>
+<br>
+<!-- Option Entry for group D -->
+<div class="container-fluid p-3 text-center bg-secondary">
+			<h1 style=" font-size: 50px;">Group D</h1>
+	</div>
+	<div class="container" style="height:300px;overflow-y: scroll;">
+		<br>
+    <input type="text" id="myInput2" onkeyup="myFunction2()" placeholder="Search for names or USN..">
+  	<table class="table table-hover" id="myTable2">
+    <thead class="text-center">
+      <tr>
+        <th>USN</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Section</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      
+      	{% for i in post %}
+			{% if i.GA=='D' and i.status==0 and i.usn not in post2 %}
+				<form method="post" action="/page2">
+				<tr class="zoom">
+				<td><input  type="text" name="D" value={{i.usn}} hidden="">{{i.usn}}</td>
+				<td>{{i.name}}</td>
+				<td>{{i.email}}</td>
+				<td>{{i.phn}}</td>
+				<td>{{i.sec}}</td>
+				<td><button class="bt p-2">Invite</button></td>
+				</tr>
+				
+				</form>
+			{% endif %}
+	{% endfor %}
+    </tbody>
+  </table>
+</div>	
+
+
+<!-- For genertaing log -->
+		
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script>
+function myFunction() {
+  // Declare variables
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+
+  // Loop through all table rows, and hide those who don't match the search query
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    td1 = tr[i].getElementsByTagName("td")[1];
+    if (td || td1) {
+      txtValue = td.textContent || td.innerText;
+      txtValue1 = td1.textContent || td1.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1 || txtValue1.toUpperCase().indexOf(filter) > -1 ) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+function myFunction1() {
+  // Declare variables
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput1");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable1");
+  tr = table.getElementsByTagName("tr");
+
+  // Loop through all table rows, and hide those who don't match the search query
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    td1 = tr[i].getElementsByTagName("td")[1];
+    if (td || td1) {
+      txtValue = td.textContent || td.innerText;
+      txtValue1 = td1.textContent || td1.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1 || txtValue1.toUpperCase().indexOf(filter) > -1 ) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+function myFunction2() {
+  // Declare variables
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput2");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable2");
+  tr = table.getElementsByTagName("tr");
+
+  // Loop through all table rows, and hide those who don't match the search query
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    td1 = tr[i].getElementsByTagName("td")[1];
+    if (td || td1) {
+      txtValue = td.textContent || td.innerText;
+      txtValue1 = td1.textContent || td1.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1 || txtValue1.toUpperCase().indexOf(filter) > -1 ) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+</script>
+</body>
+</html>
