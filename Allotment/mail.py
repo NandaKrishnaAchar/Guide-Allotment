@@ -13,7 +13,7 @@ def mail(name,usn,rname,you,link):
         mail = smtplib.SMTP('smtp.gmail.com', 587)
         mail.ehlo()
         mail.starttls()
-        mail.login(me, "nanda1999007") 
+        mail.login(me, "") 
         msg = MIMEMultipart('alternative')
         msg['Subject'] = "Link"
         msg['From'] = me 
